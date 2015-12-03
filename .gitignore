@@ -1,4 +1,4 @@
-# Created by https://www.gitignore.io/api/osx,wordpress,sublimetext,jetbrains
+# Created by https://www.gitignore.io/api/osx,wordpress,sublimetext,codekit,jetbrains
 
 ### OSX ###
 .DS_Store
@@ -64,6 +64,12 @@ wp-content/plugins/hello.php
 
 # sftp configuration file
 sftp-config.json
+
+
+### CodeKit ###
+# General CodeKit files to ignore
+config.codekit
+/min
 
 
 ### JetBrains ###
