@@ -44,8 +44,16 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Galleries
 --------------------------------------------------------------*/
 
-.navbar-default {
-	color: #ffffff;
-	background-color: #16355A;
+/*--------------------------------------------------------------
+# Navbar
+--------------------------------------------------------------*/
+.navbar-default,
+.navbar-inverse {
     border: none;
+    border-radius: 0;
+    box-shadow: 0 2px 4px;
+}
+
+.navbar-brand {
+	padding: 0 15px;
 }
