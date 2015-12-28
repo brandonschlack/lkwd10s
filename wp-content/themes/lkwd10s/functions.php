@@ -156,6 +156,8 @@ add_action( 'wp_enqueue_scripts', 'lkwd10s_jquery_scripts' );
 function lkwd10s_scripts() {
 	wp_enqueue_style( 'lkwd10s-fonts', lkwd10s_fonts_url(), array(), null );
 
+	wp_enqueue_style( 'lkwd10s-icons', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), null );
+
 	wp_enqueue_style( 'lkwd10s-bootstrap-style', get_template_directory_uri() . '/inc/bootstrap/css/bootstrap-lkwd10s.css', array(), null );
 
 	wp_enqueue_style( 'lkwd10s-style', get_stylesheet_uri() );
