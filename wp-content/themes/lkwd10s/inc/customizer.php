@@ -14,6 +14,25 @@ function lkwd10s_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	// Navbar Customizer
+	$wp_customize->add_section( 'lkwd10s_navbar' , array(
+		'title'      => __( 'Navbar', 'lkwd10s' ),
+		'priority'   => 30,
+		'description' => __( 'Change navbar style between light and dark', 'lkwd10s' )
+	) );
+	$wp_customize->add_setting( 'navbar_style' , array( 'default' => 'inverse' ) );
+	$wp_customize->add_control( new WP_Customize_Control( 
+		$wp_customize,
+		'navbar_style',
+		array(
+			'label' => __( 'Navbar Style', 'lkwd10s' ),
+			'section' => 'lkwd10s_navbar',
+			'settings' => 'navbar_style',
+			'type' => 'radio',
+			'choices' => array (
+				'inverse' => 'dark',
+				'default' => 'light'
+	) ) ) );
 }
 add_action( 'customize_register', 'lkwd10s_customize_register' );
 

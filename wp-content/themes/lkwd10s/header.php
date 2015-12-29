@@ -21,30 +21,31 @@
 </head>
 
 <body <?php body_class(); ?>>
-<nav id="site-navigation" class="main-navigation navbar navbar-inverse" role="navigation">
+<nav id="site-navigation" class="main-navigation navbar navbar-<?php echo get_theme_mod( 'navbar_style' ); ?>" role="navigation">
 	<div class="container">
 	<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">
-				<img src="<?php bloginfo('template_directory'); ?>/images/navbar/navbar-brand-inverse.png" height="50" width="129" alt="Home | Lakewood Tennis Center">
+			<a class="navbar-brand" href="<?php echo home_url(); ?>">
+				<img src="<?php bloginfo('template_directory'); ?>/images/navbar/navbar-brand-<?php echo get_theme_mod( 'navbar_style' ); ?>.png" height="50" width="129" alt="Home | Lakewood Tennis Center">
 			</a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li><a href="#">Match Video</a></li>
-				<li><a href="#">Courts</a></li>
-				<li><a href="#">Events</a></li>
-				<li><a href="#">Lessons</a></li>
-				<li><a href="#">About Us</a></li>
-			</ul>
-		</div><!-- /.navbar-collapse -->
+		<?php
+			wp_nav_menu( array(
+				'menu'              => 'navbar',
+				'theme_location'    => 'primary',
+				'container'         => 'div',
+				'container_class'   => 'collapse navbar-collapse',
+				'container_id'      => 'navbar',
+				'menu_class'        => 'nav navbar-nav'
+			) );
+		?><!-- /.navbar-collapse -->
 	</div><!-- /.container-fluid -->
 </nav><!-- #site-navigation -->
 <div id="page" class="site container">
