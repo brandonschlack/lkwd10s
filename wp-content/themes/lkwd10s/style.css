@@ -56,3 +56,20 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 .navbar-brand {
 	padding: 0 15px;
 }
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	padding: 15px 0;
+	color: #fff;
+	background-color: #16355A;
+}
+
+.footer a {
+	color: #fff;
+}

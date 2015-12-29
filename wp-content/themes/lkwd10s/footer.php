@@ -12,15 +12,16 @@
 ?>
 
 	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
+</div><!-- #page -->
+<footer id="footer" class="site-footer footer" role="contentinfo">
+	<div id="footer-content" class="site-info container">
+		<div class="row">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'lkwd10s' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'lkwd10s' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'lkwd10s' ), 'lkwd10s', '<a href="http://underscores.me/" rel="designer">Lakewood Tennis Center</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'lkwd10s' ), 'lkwd10s', '<a href="http://underscores.me/" rel="designer">Lakewood Tennis Center</a>' ); ?>				
+		</div>
+	</div><!-- #footer-content -->
+</footer><!-- #footer -->
 
 <?php wp_footer(); ?>
 
