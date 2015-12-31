@@ -47,6 +47,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Navbar
 --------------------------------------------------------------*/
+.navbar {
+	margin-bottom: 0;
+	z-index: 10;
+}
+
 .navbar-default,
 .navbar-inverse {
 	border-radius: 0;
@@ -72,4 +77,23 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 .footer a {
 	color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Section
+--------------------------------------------------------------*/
+.section-pad-top {
+	padding-top: 30px;
+}
+
+.section-pad-bottom {
+	padding-bottom: 30px;
+}
+
+.section-pad-both {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.section-bg-primary {
+	background: #046A38;
 }
