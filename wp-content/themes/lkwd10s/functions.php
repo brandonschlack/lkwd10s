@@ -173,6 +173,14 @@ function lkwd10s_scripts() {
 add_action( 'wp_enqueue_scripts', 'lkwd10s_scripts' );
 
 /**
+ * Remove WordPress.org Links
+ */
+function remove_wp_logo( $wp_admin_bar ) {
+	$wp_admin_bar->remove_node( 'wp-logo' );
+} 
+add_action( 'admin_bar_menu', 'remove_wp_logo', 999 );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
