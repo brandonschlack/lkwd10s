@@ -29,11 +29,13 @@ class lkwd10s_gmap_widget extends WP_Widget {
 		$title = apply_filters( 'widget_title', $instance['title'] );
 		// before and after widget arguments are defined by themes
 		echo $args['before_widget'];
+		echo '<div class=col-xs-12>';
 		if ( ! empty( $title ) )
 		echo $args['before_title'] . $title . $args['after_title'];
 
 		// This is where you run the code and display the output
 		echo __( 'Hello, World!', 'lkwd10s_gmap_widget_domain' );
+		echo '</div>';
 		echo $args['after_widget'];
 	}
 			
