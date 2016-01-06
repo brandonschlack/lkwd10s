@@ -45,6 +45,21 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+#page {
+  min-height: 100%;
+  height: auto;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+/*--------------------------------------------------------------
 # Navbar
 --------------------------------------------------------------*/
 .navbar {
@@ -96,4 +111,19 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 .section-bg-primary {
 	background: #046A38;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.acf-map {
+	width: 100%;
+	height: 400px;
+	border: #ccc solid 1px;
+	margin: 20px 0;
+}
+
+/* fixes potential theme css conflict */
+.acf-map img {
+   max-width: inherit !important;
 }

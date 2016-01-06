@@ -19,16 +19,27 @@ class Lkwd10s_Map_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		$title = apply_filters( 'widget_title', $instance['title'] );
 		$widget_id = $this->id;
-		// before and after widget arguments are defined by themes
+		// Display Output
 		echo $args['before_widget'];
-		echo '<div class=col-xs-12>';
-		if ( ! empty( $title ) )
-		echo $args['before_title'] . $title . $args['after_title'];
-
-		// This is where you run the code and display the output
-		echo __( 'Hello, World!', 'lkwd10s-google-map' );
-		the_field('google_map', 'widget_' . $widget_id);
-		echo '</div>';
+		// Title
+		?>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<?php if ( ! empty( $title ) ) echo $args['before_title'] . $title . $args['after_title']; ?>
+				</div>
+			</div>
+		</div>
+		<?php
+		// Google Map
+		$location = get_field('google_map', 'widget_' . $widget_id);
+		if( !empty($location) ):
+		?>
+		<div class="acf-map">
+			<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
+		</div>		
+		<?php
+		endif;
 		echo $args['after_widget'];
 	}
 			

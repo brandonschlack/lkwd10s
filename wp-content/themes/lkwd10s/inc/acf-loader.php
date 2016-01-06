@@ -41,7 +41,7 @@ if( function_exists('acf_add_local_field_group') ):
 	// Home Page Google Map
 	acf_add_local_field_group(array (
 		'key' => 'group_568c27d3a5501',
-		'title' => 'Address',
+		'title' => 'Home Map',
 		'fields' => array (
 			array (
 				'key' => 'field_568b15b74fbcd',

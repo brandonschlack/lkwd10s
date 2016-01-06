@@ -102,8 +102,8 @@ function lkwd10s_widgets_init() {
 		'name'          => esc_html__( 'Home', 'lkwd10s' ),
 		'id'            => 'sidebar-home',
 		'description'   => 'Home Page widgets',
-		'before_widget' => '<section id="%1$s" class="widget %2$s section-pad-both"><div class="container"><div class="row">',
-		'after_widget'  => '</div></div></section>',
+		'before_widget' => '<section id="%1$s" class="widget %2$s section-pad-both">',
+		'after_widget'  => '</section>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
@@ -141,30 +141,31 @@ function lkwd10s_fonts_url() {
 }
 
 /**
- * Enqueue jQuery scripts
- */
-function lkwd10s_jquery_scripts() {
-	wp_register_script( 'bootstrap-script', get_template_directory_uri() . '/inc/bootstrap/js/bootstrap.min.js', array( 'jquery' ) );
-	
-	wp_enqueue_script( 'bootstrap-script' );
-}
-add_action( 'wp_enqueue_scripts', 'lkwd10s_jquery_scripts' );
-
-/**
  * Enqueue scripts and styles.
  */
 function lkwd10s_scripts() {
+	// Styles
+	// Fonts
 	wp_enqueue_style( 'lkwd10s-fonts', lkwd10s_fonts_url(), array(), null );
-
-	wp_enqueue_style( 'lkwd10s-icons', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), null );
-
-	wp_enqueue_style( 'lkwd10s-bootstrap-style', get_template_directory_uri() . '/inc/bootstrap/css/bootstrap-lkwd10s.css', array(), null );
-
+	// Icons
+	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), '4.5.0' );
+	// Bootstrap
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/inc/bootstrap/css/bootstrap-lkwd10s.css', array(), '3.3.6' );
 	wp_enqueue_style( 'lkwd10s-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'lkwd10s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-
-	wp_enqueue_script( 'lkwd10s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	// Scripts
+	// Google Maps
+	wp_register_script( 'google-maps-api', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyApnjw6gwUOnyUsUGrHZzj9AYxS5ykdxHc', array(), '3.22', false );
+	wp_enqueue_script( 'google-maps-api' );
+	// Bootstrap
+	wp_register_script( 'bootstrap', get_template_directory_uri() . '/inc/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '3.3.6', true );	
+	wp_enqueue_script( 'bootstrap' );
+	// Navigation
+	wp_enqueue_script( 'lkwd10s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'lkwd10s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0.0', true );
+	// Theme Scripts
+	wp_register_script( 'lkwd10s-scripts', get_template_directory_uri() . '/js/lkwd10s-scripts.js', array( 'jquery', 'google-maps-api', 'bootstrap' ), '1.0.0', true );	
+	wp_enqueue_script( 'lkwd10s-scripts' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -179,6 +180,16 @@ function remove_wp_logo( $wp_admin_bar ) {
 	$wp_admin_bar->remove_node( 'wp-logo' );
 } 
 add_action( 'admin_bar_menu', 'remove_wp_logo', 999 );
+
+/**
+ * Load Advanced Custom Fields Pro
+ */
+require get_template_directory() . '/inc/acf-loader.php';
+
+/**
+ * Register Custom Widgets
+ */
+require get_template_directory() . '/inc/widgets/lkwd10s-map-widget.php';
 
 /**
  * Implement the Custom Header feature.
@@ -206,11 +217,6 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
- * Load Advanced Custom Fields Pro
+ * Load Settings page
  */
-require get_template_directory() . '/inc/acf-loader.php';
-
-/**
- * Load LKWD10S Plugin
- */
-require get_template_directory() . '/inc/lkwd10s-plugin/lkwd10s-plugin.php';
+require get_template_directory() . '/inc/lkwd10s-options.php';
