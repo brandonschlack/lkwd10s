@@ -182,11 +182,6 @@ function remove_wp_logo( $wp_admin_bar ) {
 add_action( 'admin_bar_menu', 'remove_wp_logo', 999 );
 
 /**
- * Load Advanced Custom Fields Pro
- */
-require get_template_directory() . '/inc/acf-loader.php';
-
-/**
  * Register Custom Widgets
  */
 require get_template_directory() . '/inc/widgets/lkwd10s-map-widget.php';
