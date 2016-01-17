@@ -21,14 +21,10 @@ get_header(); ?>
 					<div class="row">
 						<div class="site-branding col-xs-12">
 							<?php if ( get_header_image() ) : ?>
-								<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
+								<img src="<?php header_image(); ?>" class="img-responsive" alt="">
 							<?php endif; // End header image check. ?>
-							<?php if ( is_front_page() && is_home() ) : ?>
-								<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-							<?php else : ?>
-								<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-							<?php endif;
-
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+							<?php
 							$description = get_bloginfo( 'description', 'display' );
 							if ( $description || is_customize_preview() ) : ?>
 								<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
