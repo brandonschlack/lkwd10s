@@ -27,3 +27,18 @@ function lkwd10s_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'lkwd10s_body_classes' );
+
+/**
+ * Removes Admin Bar for users who aren't admins
+ *
+ * @param array $classes Classes for the body element.
+ * @return array
+ */
+/*
+add_action('set_current_user', 'cc_hide_admin_bar');
+function lkwd10s_hide_admin_bar() {
+	if ( !current_user_can( 'edit_posts' ) ) {
+		show_admin_bar( false );
+	}
+}
+*/

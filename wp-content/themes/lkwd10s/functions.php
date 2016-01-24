@@ -182,6 +182,11 @@ function remove_wp_logo( $wp_admin_bar ) {
 add_action( 'admin_bar_menu', 'remove_wp_logo', 999 );
 
 /**
+ * Register Admin Color Scheme
+ */
+require get_template_directory() . '/inc/admin/lkwd10s-color-scheme.php';
+
+/**
  * Register Custom Widgets
  */
 require get_template_directory() . '/inc/widgets/lkwd10s-map-widget.php';
@@ -210,8 +215,3 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
-
-/**
- * Load Settings page
- */
-require get_template_directory() . '/inc/lkwd10s-options.php';

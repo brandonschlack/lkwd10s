@@ -1,0 +1,14 @@
+// Brand Colors
+$lkwd10s-primary: #16355a;
+$lkwd10s-secondary: #046a38;
+$lkwd10s-accent-1: #dde66a;
+$lkwd10s-accent-2: #a22a22;
+$lkwd10s-accent-3: #2c5234;
+
+// Variable Colors
+$base_color: $lkwd10s-primary;
+$icon_color: #fff;
+$highlight_color: $lkwd10s-secondary;
+
+
+@import '_admin.scss';
