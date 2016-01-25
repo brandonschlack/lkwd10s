@@ -1,4 +1,4 @@
-# Created by https://www.gitignore.io/api/osx,wordpress,sublimetext,codekit,jetbrains
+# Created by https://www.gitignore.io/api/osx,wordpress,composer,sublimetext,codekit,jetbrains
 
 ### OSX ###
 .DS_Store
@@ -48,6 +48,14 @@ wp-content/plugins/hello.php
 /license.txt
 
 ai1wm-backups/
+
+### Composer ###
+composer.phar
+wp-content/plugins/lkwd10s-plugin/vendor/
+
+# Commit your application's lock file http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file
+# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
+# composer.lock
 
 ### SublimeText ###
 # cache files for sublime text

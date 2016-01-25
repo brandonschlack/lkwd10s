@@ -1,7 +1,4 @@
 {
-	"config": {
-        "vendor-dir": "plugins"
-    },
 	"require": {
 		"google/apiclient": "1.*"
 	}

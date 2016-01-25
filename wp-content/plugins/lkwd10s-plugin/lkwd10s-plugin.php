@@ -10,7 +10,7 @@
  * Text Domain: lkwd10s-plugin
  */
 
-// require __DIR__ . '/plugins/autoload.php';
+// require __DIR__ . '/vendor/autoload.php';
 // define('APPLICATION_NAME', 'Lakewood Tennis Center Apps Script API');
 // define('CREDENTIALS_PATH', '~/.credentials/script-php-quickstart.json');
 // define('CLIENT_SECRET_PATH', __DIR__ . '/client_secret.json');

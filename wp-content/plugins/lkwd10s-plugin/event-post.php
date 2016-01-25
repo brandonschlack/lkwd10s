@@ -43,7 +43,6 @@ class Lkwd10s_Event_Post_Type {
 			'description'           => 'An upcoming event',
 			'labels'                => $labels,
 			'supports'              => array( 'title', 'editor', 'author', 'thumbnail', 'revisions', ),
-			'register_meta_box_cb'  => 'event_post_meta_box_cb',
 			'hierarchical'          => false,
 			'public'                => true,
 			'show_ui'               => true,
@@ -59,10 +58,6 @@ class Lkwd10s_Event_Post_Type {
 			'capability_type'       => 'post',
 		);
 		register_post_type( 'event', $args );
-	}
-
-	function event_post_meta_box_cb() {
-		remove_meta_box('authordiv', 'event', 'normal');
 	}
 
 	// Register Custom Taxonomy
