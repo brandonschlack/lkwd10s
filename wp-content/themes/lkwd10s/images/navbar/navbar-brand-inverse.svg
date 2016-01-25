@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="129px" height="50px" viewBox="0 0 129 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>navbar-brand-inverse</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Styles" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Logo" sketch:type="MSArtboardGroup" transform="translate(-236.000000, -47.000000)">
+            <g id="navbar-brand-inverse" sketch:type="MSLayerGroup" transform="translate(236.000000, 47.000000)">
+                <rect id="background" fill="#16355A" sketch:type="MSShapeGroup" x="0" y="0" width="129" height="50"></rect>
+                <g id="text" transform="translate(16.483871, 5.000000)" font-weight="normal" font-family="Montserrat" fill="#FFFFFF" sketch:type="MSTextLayer">
+                    <text id="tennis-center" font-size="13.9999998" line-spacing="13.9999998">
+                        <tspan x="3" y="35">tennis center</tspan>
+                    </text>
+                    <text id="lakewood" font-size="20" line-spacing="20.9999996">
+                        <tspan x="0" y="19">lakewood</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

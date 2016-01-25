@@ -32,7 +32,7 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="<?php echo home_url(); ?>">
-				<img src="<?php bloginfo('template_directory'); ?>/images/navbar/navbar-brand-<?php echo get_theme_mod( 'navbar_style' ); ?>.png" height="50" width="129" alt="Home | Lakewood Tennis Center">
+				<img src="<?php bloginfo('template_directory'); ?>/images/navbar/navbar-brand-<?php echo get_theme_mod( 'navbar_style' ); ?>.svg" height="50" width="129" alt="Home | Lakewood Tennis Center">
 			</a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->

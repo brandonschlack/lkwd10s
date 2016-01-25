@@ -53,12 +53,27 @@ html {
 }
 
 #page {
-  min-height: 100%;
-  height: auto;
-  /* Pad bottom by footer height */
-  padding: 0 0 60px;
+	min-height: 100%;
+	height: auto;
+	/* Pad bottom by footer height */
+	padding: 0 0 60px;
 }
 
+.page-template-page-coming-soon {
+	background-color: #16355A;
+}
+
+.page-template-page-coming-soon .entry-content {
+	color: #fff;
+	margin-top: 20%;
+	font-size: 1.2em;
+	line-height: 2em;
+}
+
+.page-template-page-coming-soon .entry-content img {
+	width: 100%;
+	margin-bottom: 20%;
+}
 /*--------------------------------------------------------------
 # Navbar
 --------------------------------------------------------------*/
