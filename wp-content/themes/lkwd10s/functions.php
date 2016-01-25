@@ -155,7 +155,7 @@ function lkwd10s_scripts() {
 
 	// Scripts
 	// Google Maps
-	wp_register_script( 'google-maps-api', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyApnjw6gwUOnyUsUGrHZzj9AYxS5ykdxHc', array(), '3.22', false );
+	wp_register_script( 'google-maps-api', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyA47X4M4cDGfxgPfMqUyn7AF_qJhzf58q4', array(), '3.22', false );
 	wp_enqueue_script( 'google-maps-api' );
 	// Bootstrap
 	wp_register_script( 'bootstrap', get_template_directory_uri() . '/inc/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '3.3.6', true );	
