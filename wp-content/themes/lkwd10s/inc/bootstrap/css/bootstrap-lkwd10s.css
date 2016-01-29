@@ -1078,7 +1078,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
@@ -1180,7 +1180,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-weight: 400;
   line-height: 1.1;
   color: inherit;
@@ -4169,7 +4169,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   position: relative;
   min-height: 50px;
   margin-bottom: 20px;
-  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 @media (min-width: 768px) {
   .navbar {
@@ -5995,7 +5995,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6113,7 +6113,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;

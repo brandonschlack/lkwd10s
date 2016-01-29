@@ -10,13 +10,27 @@
  * Text Domain: lkwd10s-plugin
  */
 
-// require __DIR__ . '/vendor/autoload.php';
-// define('APPLICATION_NAME', 'Lakewood Tennis Center Apps Script API');
-// define('CREDENTIALS_PATH', '~/.credentials/script-php-quickstart.json');
-// define('CLIENT_SECRET_PATH', __DIR__ . '/client_secret.json');
-// define('SCOPES', implode(' ', array(
-// 	"https://www.googleapis.com/auth/drive")
-// ));
+// Plugin Path
+if ( ! defined( 'LKWD10SP_DIR' ) ) {
+	define( 'LKWD10SP_DIR', plugin_dir_path( __FILE__ ) );
+}
 
-require_once __DIR__ . '/event-post.php';
+// Plugin URL
+if ( ! defined( 'LKWD10SP_URL' ) ) {
+	define( 'LKWD10SP_URL', plugin_dir_url( __FILE__ ) );
+}
+
+// Google API src
+if ( ! defined( 'LKWD10SP_GA_SRC' ) ) {
+	define( 'LKWD10SP_GA_SRC', dirname( __FILE__ ) . '/vendor/google/apiclient/src/Google/' );
+}
+
+include_once __DIR__ . '/event-post.php';
+global $lkwd10s_event_post_type;
 $lkwd10s_event_post_type = new Lkwd10s_Event_Post_Type;
+
+include_once __DIR__ . '/admin/lkwd10s-options.php';
+
+include_once __DIR__ . '/includes/class-google-api.php';
+global $gclient;
+$gclient = new Lkwd10s_Google_API;

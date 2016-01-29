@@ -160,6 +160,9 @@ function lkwd10s_scripts() {
 	// Bootstrap
 	wp_register_script( 'bootstrap', get_template_directory_uri() . '/inc/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '3.3.6', true );	
 	wp_enqueue_script( 'bootstrap' );
+	// Modernizr
+	wp_register_script('modernizr', get_stylesheet_directory_uri() . '/js/modernizr.js', array('jquery'), '3.3.1', true);
+	wp_enqueue_script( 'modernizr' );
 	// Navigation
 	wp_enqueue_script( 'lkwd10s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'lkwd10s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0.0', true );
@@ -172,6 +175,14 @@ function lkwd10s_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'lkwd10s_scripts' );
+
+/**
+ * Add Google Fonts to editor
+ */
+function lkwd10s_editor_styles() {
+	add_editor_style( array( 'editor-style.css', lkwd10s_fonts_url() ) );
+}
+add_action( 'after_setup_theme', 'lkwd10s_editor_styles' );
 
 /**
  * Remove WordPress.org Links
