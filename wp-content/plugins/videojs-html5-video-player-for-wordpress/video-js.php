@@ -31,8 +31,8 @@ function register_videojs(){
 	wp_enqueue_style( 'videojs-plugin' );
 	
 	if($options['videojs_cdn'] == 'on') { //use the cdn hosted version
-		wp_register_script( 'videojs', '//vjs.zencdn.net/4.5/video.js' );
-		wp_register_style( 'videojs', '//vjs.zencdn.net/4.5/video-js.css' );
+		wp_register_script( 'videojs', '//vjs.zencdn.net/5.5.3/video.js' );
+		wp_register_style( 'videojs', '//vjs.zencdn.net/5.5.3/video-js.css' );
 		wp_enqueue_style( 'videojs' );
 	} else { //use the self hosted version
 		wp_register_script( 'videojs', plugins_url( 'videojs/video.js' , __FILE__ ) );
@@ -40,7 +40,15 @@ function register_videojs(){
 		wp_enqueue_style( 'videojs' );
 	}
 	
-	wp_register_script( 'videojs-youtube', plugins_url( 'videojs/vjs.youtube.js' , __FILE__ ) );
+	wp_register_script( 'videojs-youtube', plugins_url( 'videojs/plugins/youtube/Youtube.min.js' , __FILE__ ) );
+
+	// wp_register_script( 'videojs-chromecast', plugins_url( 'videojs/plugins/chromecast/videojs.chromecast.js' , __FILE__ ) );
+	// wp_register_style( 'videojs-chromecast', plugins_url( 'videojs/plugins/chromecast/videojs.chromecast.css' , __FILE__ ) );
+	// wp_enqueue_style( 'videojs-chromecast' );
+
+	// wp_register_script( 'videojs-airplay', plugins_url( 'videojs/plugins/airplay/videojs.airplay.js' , __FILE__ ) );
+	// wp_register_style( 'videojs-airplay', plugins_url( 'videojs/plugins/airplay/videojs.airplay.css' , __FILE__ ) );
+	// wp_enqueue_style( 'videojs-airplay' );
 }
 add_action( 'wp_enqueue_scripts', 'register_videojs' );
 
@@ -61,9 +69,17 @@ function videojs_custom_colors() {
 		echo "
 	<style type='text/css'>
 		.vjs-default-skin { color: " . $options['videojs_color_one'] . " }
+		.vjs-default-skin .vjs-big-play-button { left: 50%; top:50%; margin-left: -1.5em; margin-top: -0.75em; }
 		.vjs-default-skin .vjs-play-progress, .vjs-default-skin .vjs-volume-level { background-color: " . $options['videojs_color_two'] . " }
 		.vjs-default-skin .vjs-control-bar, .vjs-default-skin .vjs-big-play-button { background: rgba(" . $color3 . ",0.7) }
 		.vjs-default-skin .vjs-slider { background: rgba(" . $color3 . ",0.2333333333333333) }
+	</style>
+		";
+	}
+	else {
+		echo "
+	<style type='text/css'>
+		.vjs-default-skin .vjs-big-play-button { left: 50%; top:50%; margin-left: -1.5em; margin-top: -0.75em; }
 	</style>
 		";
 	}
@@ -119,7 +135,7 @@ function video_shortcode($atts, $content=null){
 	
 	// ID is required for multiple videos to work
 	if ($id == '')
-		$id = 'example_video_id_'.rand();
+		$id = 'videojs_id_'.rand();
 
 	// MP4 Source Supplied
 	if ($mp4)
@@ -216,10 +232,8 @@ _end_;
 		$videojs = <<<_end_
 		
 		<!-- Begin Video.js Responsive Wrapper -->
-		<div style='{$maxwidth}'>
-			<div class='video-wrapper' style='padding-bottom:{$ratio}%;'>
-				{$videojs}
-			</div>
+		<div class='video-wrapper' style='padding-bottom:{$ratio}%;'>
+			{$videojs}
 		</div>
 		<!-- End Video.js Responsive Wrapper -->
 		
